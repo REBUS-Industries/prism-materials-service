@@ -3,7 +3,6 @@ WORKDIR /build
 
 COPY package.json package-lock.json* rebus-industries-prism-shared-1.0.0.tgz ./
 RUN npm ci --no-audit --no-fund
-RUN npm prune --omit=dev
 
 COPY tsconfig.json ./
 COPY src ./src
@@ -11,6 +10,9 @@ RUN npm run build
 
 # Copy migrations from the shared package
 RUN cp -r node_modules/@rebus-industries/prism-shared/src/db/migrations ./dist-migrations
+
+# Remove devDeps after build
+RUN npm prune --omit=dev
 
 FROM node:22-alpine AS runtime
 WORKDIR /prism-materials
