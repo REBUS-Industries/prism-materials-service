@@ -12,7 +12,7 @@
     "@fastify/cookie": "^9.4.0",
     "@fastify/cors": "^9.0.1",
     "@fastify/multipart": "^8.3.0",
-    "@rebus-industries/prism-shared": "^1.0.0",
+    "@rebus-industries/prism-shared": "file:./rebus-industries-prism-shared-1.0.0.tgz",
     "adm-zip": "^0.5.17",
     "archiver": "^8.0.0",
     "dotenv": "^16.4.5",
